@@ -32,6 +32,7 @@
 	use sed -i.bak option creates a backup file before writing the source file
 	
 	. sed 's/unix/linux/' <filename> -> this will replace first instance of unix with linux from each line of the file but will not update file
+	
 	  - s in sed command represents substitution
 	. sed 's/unix/linux/g' <filename> -> this will replace all instance of unix with linux from each line the file but will not update file  
 	. sed 's/unix/linux/3' <filename> -> this will replace 3rd instance of unix with linux from each line the file but will not update file    
