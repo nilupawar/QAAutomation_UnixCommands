@@ -1,6 +1,6 @@
 # QAAutomation_UnixCommands
 
-- ### grep command [acronym that stands for Global Regular Expression Print.]
+- ### grep command [Stands for Global Regular Expression Print.]
 	- This command is used to used to search for text from string/file
 	
 	. grep string_to_search <filename> -> This will search for string_to_search in file and display all the lines which has string "string_to_search" __
@@ -26,4 +26,22 @@
 	. grep -f <file_with_pattern> <filename> -> takes pattern from file_with_pattern file and search in given file	
 	
 	
+- ### sed command [Stands for stream editor]	
+	- This command can be used to search for a pattern in a file and replace with a new string without opening a file
+	use sed -i option if you want to update the same file
+	use sed -i.bak option creates a backup file before writing the source file
 	
+	. sed 's/unix/linux/' <filename> -> this will replace first instance of unix with linux from each line of the file but will not update file
+	  - s in sed command represents substitution
+	. sed 's/unix/linux/g' <filename> -> this will replace all instance of unix with linux from each line the file but will not update file  
+	. sed 's/unix/linux/3' <filename> -> this will replace 3rd instance of unix with linux from each line the file but will not update file    
+	. sed 's/unix/linux/3g' <filename> -> this will replace 3rd and after that instance of unix with linux from each line the file but will not update file
+	. sed '2 s/unix/linux/' <filename> -> this will replace first instance of unix with linux from 2nd line of the file but will not update file
+	. sed '2-4 s/unix/linux/' <filename> -> this will replace first instance of unix with linux from 2nd to 4th lines of the file but will not update file
+	. sed -e 's/.*/add text &/' <filename> -> this will add string "add text" at the begining of each line
+	. sed -e 's/danger.*stops//g' <filename> -> This will delete the line with ‘danger’ on start & ‘stops’ in the end & it can have any number of words in between , ‘.*’ defines that part.
+	. sed Nd <filename> -> deletes nth line
+	. sed $d <filename> -> delete last line from the file
+	
+- ### awk command []
+	- 	
