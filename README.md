@@ -45,3 +45,21 @@
 	
 - ### awk command []
 	- 	
+
+	
+- ### find command 
+	- This command is used to find files in directories
+	
+	  - find . -> This will return the list of all files and directories in the current and sub directories
+	  - find <directory> -> this will return list of all the files and directtoeies in the <directory> and sub directory
+	  - find . -type d -> this will ONLY return list of directories under the current and it's subdirectories
+	  - find . -type f -> this will ONLY return list of files under the current and it's subdirectories 	
+	  - find . -type f -name <file_name_OR_reg_exp> -> this will only list the names of files for the given name(case sensitive) or pattern under the current and it's subdirectories 	 
+	  - find . -type f -iname <file_name_OR_reg_exp> -> this will only list the names of files for the given name(case insensitive) or pattern under the current and it's subdirectories 
+	  - find . -size +5M -> list all the files having size more than 5 MB in current and sub Directories (+ before 5 means more than 5)
+	  - find . -maxlength 1 -> list all the files in current directory ONLY
+      - find . -name *.jpg -exec rm {} + -> This will remove all the files with extension .jpg from the current and sub directories
+      - 	  
+	  
+	  
+- ### find the usage of -exec with unix command ????	  
