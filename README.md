@@ -44,7 +44,15 @@
 	  - sed $d <filename> -> delete last line from the file
 	
 - ### awk command []
-	- 	
+	  NOTE :- Never miss the / and / before and after a string/expression with this command	
+	  
+	  - awk '{ print }' <file_name/path> -> This will print all the lines from a file
+	  - awk '{ print $1 }' <file_name/path> -> This will print 1st word from file (I said word here because default seperator is space)
+      - awk '/<word>/ { print }' <file_name/path> -> this will print all the files which has given word
+	  - awk '/^<expression>/ { print }' <file_name/path> -> This will print all the lines from the file which STARTS with the given expression
+      - awk '{ if($1 ~ /<word>/) print }' <file_name/path> -> This will print all the lines from the file which has first word matching the given word
+      - awk -F: '{ print $1 }' <file_name/path> -> print first word. This example is to show how to change the filter (Using option -F: ,with this filter is : (colon)) 
+      - 	  
 
 	
 - ### find command 
