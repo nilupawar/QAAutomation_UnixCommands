@@ -70,4 +70,37 @@
       - 	  
 	  
 	  
-- ### find the usage of -exec with unix command ????	  
+- ### find the usage of -exec with unix command ????
+
+
+- ### SSH tunneling
+  	- We use tunneling when we want to access a resource which has restriction of usage. lets understand more with example
+ 	- There are 2 types of tunnels
+    		- Local port forwarding (-L)
+    		- Remote port forwardning ( -R )
+ 
+    		Note: First section of IP:PORT refers to client(from where request will be initiated) and second section of IP:PORT refers to who is going to serve (This is important to understand when doing -L and -R) 
+
+		**Local port forwarding** :-> Use it when you want to access a service from a remote machine but that service is not exposed. Not exposed basically means that service port is restricted by firewall.
+
+    		Example command to access it :
+
+    		_ssh -L 127.0.0.1:2345:127.0.0.2:5432 user@remotehostip_
+		- -L : local port forwarding
+  		- 127.0.0.1 : This is the localhost IP address of your/client machine
+    		- 2345 : This is the port of your/client machine
+  		- 127.0.0.2 : This is the localhost IP address of remote machine
+    			-NOTE: if remote host is a jump box and only jump box has access to other remote host whose service you want to access then specify the IP address of the other remote box
+		- 5432: remote port from which you want to access service
+  
+
+		**Remote port forwardning** :-> Use it when you want service on your machine to be exposed to remote machine.
+
+    		_ssh -R 127.0.0.1:2345:127.0.0.2:5432 user@remotehostip_
+    		- -R : Remote port forwarding
+    		- 127.0.0.1 : This is the localhost of the machine from where request will be sent
+    		- 2345 : This is the port of client machine(here it will be remote machine making request to your machine)
+    		- 127.0.0.2 : This is the localhost of your machine
+    		- 5432 : This is your machine port which is exposing service on this port
+    
+    		
